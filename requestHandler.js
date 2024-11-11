@@ -70,7 +70,7 @@ function order(response, productId){
     response.end();
 }
 
-function orderlist(response, productId){
+function orderlist(response){
     console.log('orderlist');
 
     response.writeHead(200, {'Content-Type': 'text/html'});
@@ -88,9 +88,9 @@ function orderlist(response, productId){
 }
 
 let handle = {}; // key:value 쌍으로 이루어진 변수상자
-handle['/'] = main;
-handle['/order'] = order;
-handle['/orderlist'] = orderlist;
+handle['/'] = main; // 메인 페이지
+handle['/order'] = order; // 주문 페이지
+handle['/orderlist'] = orderlist; // 주문 리스트 페이지
 
 /* 이미지 목록 */
 handle['/favicon.ico'] = favicon;
